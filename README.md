@@ -3,7 +3,7 @@
 ```
 apt-get update;
 apt-get install -y wget zsh vim tmux curl git htop libgl1 libglib2.0-0 rsync; pip install gpustat opencv-python matplotlib einops scikit-image scikit-learn jupyter jupyterlab; 
-git clone https://github.com/SeongwoongCho/dotfiles.git ~/.dotfiles; 
+git clone https://github.com/Suho0922/dotfiles.git ~/.dotfiles; 
 cd ~/.dotfiles; bash install.sh
 ```
 terminal info: <br>
