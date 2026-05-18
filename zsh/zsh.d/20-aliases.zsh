@@ -33,7 +33,7 @@ alias pylist='ps -ef | grep "python"'
 
 # Claude Code (auto-update OMC before launch)
 alias claude='omc update && IS_SANDBOX=1 command claude --dangerously-skip-permissions'
-
+alias codex='codex --yolo'
 # GPU/NPU/HPU monitoring
 alias ug='usegpu'
 alias gpu="watch --color -n.5 gpustat --color"

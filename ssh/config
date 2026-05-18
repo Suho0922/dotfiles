@@ -73,6 +73,16 @@ Host mobi205
     Port 8956
     # (device 정보 미기재)
 
+Host mobi210
+    HostName 192.168.10.210
+    User mobilint
+    Port 2246
+
+Host mobi220
+    HostName 192.168.10.220
+    User mobilint
+    Port 2279 
+
 Host compiler
     HostName 192.168.10.138
     User compiler
