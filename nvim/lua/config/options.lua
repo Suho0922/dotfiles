@@ -37,16 +37,19 @@ vim.opt.lazyredraw = true -- don't update screen during macro and script executi
 vim.opt.equalalways = false
 vim.opt.signcolumn = "yes"
 
--- clipboard (OSC52 — works over SSH, tmux, etc.)
-vim.g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-	},
-	paste = {
-		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-	},
-}
+-- clipboard: use OSC52 only over SSH; otherwise let nvim auto-detect
+-- (wl-copy / xclip / pbcopy) for native local clipboard integration.
+if vim.env.SSH_CONNECTION or vim.env.SSH_TTY then
+	vim.g.clipboard = {
+		name = "OSC 52",
+		copy = {
+			["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+			["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+		},
+		paste = {
+			["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+			["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+		},
+	}
+end
 vim.opt.clipboard:append("unnamedplus")
