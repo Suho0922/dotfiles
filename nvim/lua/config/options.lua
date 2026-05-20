@@ -37,8 +37,6 @@ vim.opt.lazyredraw = true -- don't update screen during macro and script executi
 vim.opt.equalalways = false
 vim.opt.signcolumn = "yes"
 
--- clipboard: use OSC52 only over SSH; otherwise let nvim auto-detect
--- (wl-copy / xclip / pbcopy) for native local clipboard integration.
 if vim.env.SSH_CONNECTION or vim.env.SSH_TTY then
 	vim.g.clipboard = {
 		name = "OSC 52",
