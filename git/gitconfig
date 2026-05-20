@@ -56,3 +56,5 @@
 
 [diff]
     colorMoved = default
+[safe]
+	directory = /home/seongwoong/.claude/plugins/marketplaces/omc
